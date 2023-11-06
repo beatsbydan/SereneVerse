@@ -1,3 +1,3 @@
 # ABOUT
 
-This is the Frontend.
+All Frontend code is here.
