@@ -30,6 +30,6 @@ const AuthSlice = createSlice({
 })
 
 export const {setCredentials, setIsLoggedIn, setPrevLocation} = AuthSlice.actions
-export const selectToken = (state) => state.auth.accessToken
+// export const selectToken = (state) => state.auth.accessToken
 
 export default AuthSlice.reducer

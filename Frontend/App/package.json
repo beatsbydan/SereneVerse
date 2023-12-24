@@ -12,6 +12,7 @@
     "@types/node": "^16.18.68",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
+    "@types/react-redux": "^7.1.33",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.6.2",
     "react": "^18.2.0",
