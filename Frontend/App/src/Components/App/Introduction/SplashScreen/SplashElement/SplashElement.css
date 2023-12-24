@@ -1,0 +1,42 @@
+.splashElement{
+    font-family: var(--ff-montserrat);
+    width:100%;
+    border-radius: 0.7rem;
+    height: 85vh;
+    background-color: white;
+    position: relative;
+    padding: 3rem;
+}
+.mainSplash{
+    width:100%;
+    /* position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%); */
+}
+.splashBlock{
+    width:100%;
+    max-width: 400px;
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:1.2rem;
+}
+.splashBlock img{
+    width:100%;
+    max-width: 250px;
+    aspect-ratio: 1;
+    margin:auto;
+}
+.splashBlock p{
+    font-size: 0.85rem;
+    color:rgba(140, 140, 140, 1);
+}
+.splashActions{
+    width:100%;
+    max-width: 350px;
+    margin: auto;
+}

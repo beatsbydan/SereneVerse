@@ -1,0 +1,11 @@
+.customButton{
+    width:100%;
+    border-radius: 0.5rem;
+    background-color: var(--root-color);
+    color:white;
+    font-family: var(--ff-montserrat);
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}

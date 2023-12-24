@@ -1,0 +1,33 @@
+.welcome{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: var(--root-color);
+    font-family: var(--ff-montserrat);
+}
+.welcomePage{
+    width: 85%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    color: white;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.welcomePage h1{
+    font-size: 3.5rem;
+}
+@media screen and (max-width:500px) {
+    .welcomePage h1{
+        font-size: 2.8rem;
+    }
+    .welcomePage p{
+        font-size: var(--ff-p);
+    }
+}

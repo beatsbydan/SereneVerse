@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  /* COLORS */
+
+  --root-color: rgba(26, 153, 142, 1);
+  --ff-montserrat: 'Montserrat', sans-serif;
+  --ff-poppins: 'Poppins', sans-serif;
+
+  /* FONT-SIZES */
+  --ff-p: 0.85rem;
+  --ff-small: 0.7rem;
+}
+
+.splashCard{
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--root-color);
+  position: relative;
+  padding: 2em 5%;
+}
+
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+button{
+  border: none;
+  cursor:pointer;
+}
+
+@media screen and (max-width:700px) {
+  .splashCard{
+    background-color: white;
+  }
+}
+
