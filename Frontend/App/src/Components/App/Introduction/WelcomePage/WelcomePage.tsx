@@ -8,7 +8,7 @@ const WelcomePage: React.FC = () => {
   useEffect(()=>{
     setTimeout(()=>{
       navigate('/welcome')
-    },2700)
+    },3000)
   })
   return (
     <div className="welcome">
