@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import './WelcomePage.css'
 import logo from '../../../../Assets/images/logo.svg'
 
-const WelcomePage = () => {
+const WelcomePage: React.FC = () => {
   const navigate = useNavigate()
   useEffect(()=>{
     setTimeout(()=>{

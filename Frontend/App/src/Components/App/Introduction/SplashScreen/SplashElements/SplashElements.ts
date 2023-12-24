@@ -2,7 +2,13 @@ import SplashOne from '../../../../../Assets/images/splash-one.svg'
 import SplashTwo from '../../../../../Assets/images/splash-two.svg'
 import SplashThree from '../../../../../Assets/images/splash-three.svg'
 
-const SplashElements = [
+type splashType = {
+    url: string,
+    header: string,
+    splashText: string
+}
+
+const SplashElements: splashType[] = [
     {
         url: SplashOne,
         header: 'Welcome to MoodMentor',

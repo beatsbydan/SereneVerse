@@ -2,7 +2,7 @@ import React from 'react'
 import './SplashThumbnails.css'
 import SplashElements from '../SplashElements/SplashElements'
 
-const SplashThumbnails = (props) => {
+const SplashThumbnails: React.FC<{index: number}> = (props) => {
     return (
         <ul className='splashThumbNails'>
             {SplashElements.map((element, index)=>{

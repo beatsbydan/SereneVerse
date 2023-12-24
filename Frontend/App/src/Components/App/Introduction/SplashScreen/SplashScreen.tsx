@@ -9,9 +9,10 @@ import SplashElements from './SplashElements/SplashElements';
 import SplashElement from './SplashElement/SplashElement';
 
 const SplashScreen = () => {
-  const sliderRef = useRef(null)
-  const [isLastSlide, setIsLastSlide] = useState(false);
+  const sliderRef = useRef<Slider>(null)
+  const [isLastSlide, setIsLastSlide] = useState<boolean>(false);
   const navigate = useNavigate()
+
   const settings = {
     dots: false,
     infinite: false,
@@ -20,10 +21,12 @@ const SplashScreen = () => {
     slidesToScroll: 1,
     prevArrow: <></>,
     nextArrow: <></>,
-    afterChange: (currentSlide) => {
-      setIsLastSlide(currentSlide === sliderRef.current.props.children.length - 1);
+    afterChange: (currentSlide: number) => {
+      const totalSlides = sliderRef.current?.innerSlider.state.slideCount;
+      setIsLastSlide(currentSlide === totalSlides - 1);
     },
   };
+
   const nextSlide = () => {
     if (sliderRef.current) {
       sliderRef.current.slickNext();
@@ -32,6 +35,7 @@ const SplashScreen = () => {
       navigate('/start')
     }
   }
+
   return (
     <div className='splashCard'>
       <SplashScreenLogo/>

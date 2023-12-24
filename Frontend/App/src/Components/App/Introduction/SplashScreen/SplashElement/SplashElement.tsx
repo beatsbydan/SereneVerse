@@ -4,7 +4,14 @@ import SplashThumbnails from '../SplashThumbnails/SplashThumbnails'
 import Button from '../../../../../UI/Button/SplashButton/Button'
 import LazyImage from '../../../../../UI/LazyImage/LazyImage'
 
-const SplashElement = (props) => {
+type splash = {
+    url: string,
+    header: string,
+    splashText: string
+}
+
+const SplashElement:React.FC<{splash: splash, index: number, changeSplash: () => void}> = (props) => {
+    
     return (
         <div className='splashElement'>
             <div className="mainSplash">
