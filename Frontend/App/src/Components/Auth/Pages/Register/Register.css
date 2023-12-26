@@ -1,0 +1,109 @@
+.register{
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 2rem 0.7rem;
+    height: 90%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    overflow-y: scroll;
+    scrollbar-color: white white; 
+    scrollbar-width: thin;
+}
+.register:hover{
+    scrollbar-color: rgba(64, 64, 64, 0.127) white;
+}
+.register::-webkit-scrollbar{
+    width: 0.5em;
+}
+.register::-webkit-scrollbar-track{
+    background-color: white;
+}
+.register::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 100vw;
+    border: .2em solid white;
+}
+.register:hover::-webkit-scrollbar-thumb{
+    background-color: rgba(64, 64, 64, 0.127);
+}
+.register--head{
+    text-align: center;
+    color: var(--root-color);
+}
+.register--head h1{
+    margin-bottom: 0.4rem;
+}
+.register--head p span{
+    font-weight: 700;
+}
+.register--actions{
+    font-family: var(--ff-poppins);
+    margin-top: 2.2rem;
+    width: 98%;
+    margin: 2.2rem auto 0 auto;
+}
+.register--main{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top:2rem ;
+}
+.register--options{
+    display:flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+.register--options a{
+    color: rgba(64, 64, 64, 1);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+.auxiliaryAuth{
+    width: 100%;
+    text-align: center;
+    margin: 1.5rem auto;
+    font-family: var(--ff-inter);
+}
+.toLogin{
+    text-align: center;
+    font-family: var(--ff-inter);
+    color: rgba(91, 88, 88, 1);
+}
+.toLogin span a{
+    color: inherit;
+    font-weight: 700;
+}
+@media screen and (max-width:700px) {
+    .register{
+        position: unset;
+        top:unset;
+        left:unset;
+        transform: unset;
+        max-width: unset;
+        overflow-y: unset;
+        height: unset;
+        padding: 0 0 2rem 0;
+    }
+    .register--head{
+        background-color: var(--root-color);
+        color: white;
+        height:200px;
+        padding-top: 6em;
+        padding-left: 5%;
+        margin-bottom: 3rem;
+        text-align: left;
+    }
+    .register--main, .register--actions, .register--options{
+        width: 90%;
+        margin: auto;
+    }
+    .register--options{
+        margin: 1rem auto 0 auto;
+    }
+    .register--actions{
+        margin-top: 2rem;
+    }
+}

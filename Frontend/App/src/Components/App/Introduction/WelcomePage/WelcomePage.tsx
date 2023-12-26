@@ -9,7 +9,7 @@ const WelcomePage: React.FC = () => {
     setTimeout(()=>{
       navigate('/welcome')
     },3000)
-  })
+  },[navigate])
   return (
     <div className="welcome">
       <div className="welcomePage">

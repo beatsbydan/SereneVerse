@@ -4,13 +4,19 @@ import SplashThumbnails from '../SplashThumbnails/SplashThumbnails'
 import Button from '../../../../../UI/Button/SplashButton/Button'
 import LazyImage from '../../../../../UI/LazyImage/LazyImage'
 
-type splash = {
+type SplashType = {
     url: string,
     header: string,
     splashText: string
 }
 
-const SplashElement:React.FC<{splash: splash, index: number, changeSplash: () => void}> = (props) => {
+type SplashElementType ={
+    splash: SplashType,
+    index: number,
+    changeSplash: () => void
+}
+
+const SplashElement:React.FC<SplashElementType> = (props) => {
     
     return (
         <div className='splashElement'>
@@ -22,7 +28,7 @@ const SplashElement:React.FC<{splash: splash, index: number, changeSplash: () =>
                 </div>
                 <SplashThumbnails index={props.index}/>
                 <div className='splashActions'>
-                    <Button text={"Continue"} actionHandler={props.changeSplash}/>
+                    <Button type='button' text={"Continue"} actionHandler={props.changeSplash}/>
                 </div>
             </div>
         </div>

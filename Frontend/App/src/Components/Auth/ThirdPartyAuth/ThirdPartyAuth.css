@@ -1,0 +1,15 @@
+.thirdPartyAuth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 70px;
+    aspect-ratio: 1;
+    box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.115);
+    border-radius: 1.3rem;
+    margin: 1.2rem auto;
+    cursor: pointer;
+}
+.thirdPartyAuth img{
+    width: 40px;
+}

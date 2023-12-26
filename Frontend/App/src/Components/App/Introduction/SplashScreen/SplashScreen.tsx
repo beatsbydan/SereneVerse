@@ -8,7 +8,7 @@ import SplashScreenLogo from '../../../../UI/SplashScreenLogo/SplashScreenLogo'
 import SplashElements from './SplashElements/SplashElements';
 import SplashElement from './SplashElement/SplashElement';
 
-const SplashScreen = () => {
+const SplashScreen:React.FC = () => {
   const sliderRef = useRef<Slider>(null)
   const [isLastSlide, setIsLastSlide] = useState<boolean>(false);
   const navigate = useNavigate()
@@ -22,8 +22,7 @@ const SplashScreen = () => {
     prevArrow: <></>,
     nextArrow: <></>,
     afterChange: (currentSlide: number) => {
-      const totalSlides = sliderRef.current?.innerSlider.state.slideCount;
-      setIsLastSlide(currentSlide === totalSlides - 1);
+      setIsLastSlide(currentSlide === SplashElements.length - 1);
     },
   };
 
