@@ -11,13 +11,13 @@ const LazyImage:React.FC<{src: string, alt: string}> = (props) => {
         img.onload = () => setLoaded(true);
 
         return () => {
-        img.onload = null;
+            setLoaded(false)
         };
-    }, [props.src]);
+    }, [props.src])
 
     return (
         <img
-            className='lazyImage'
+            className={loaded ? 'lazyImage animate' : 'lazyImage'}
             src={loaded ? props.src : logo}
             alt={props.alt}
         />
