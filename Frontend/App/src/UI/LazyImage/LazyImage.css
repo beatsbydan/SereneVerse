@@ -1,0 +1,12 @@
+.animate{
+    animation: 1s forwards loadSplash
+}
+
+@keyframes loadSplash {
+    from{
+        opacity: 0
+    }
+    to{
+        opacity: 1
+    }
+}
