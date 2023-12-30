@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import SplashScreenLogo from '../../../../UI/SplashScreenLogo/SplashScreenLogo'
+import SplashScreenLogo from '../../../../../UI/SplashScreenLogo/SplashScreenLogo'
 import { FaArrowLeft } from 'react-icons/fa6'
-import Button from '../../../../UI/Button/SplashButton/Button'
+import Button from '../../../../../UI/Button/SplashButton/Button'
 import './Login.css'
-import Input from '../../../../UI/Input/AuthInput/Input'
-import CheckBox from '../../../../UI/CheckBox/CheckBox'
+import Input from '../../../../../UI/Input/AuthInput/Input'
+import CheckBox from '../../../../../UI/CheckBox/CheckBox'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Login: React.FC = () => {

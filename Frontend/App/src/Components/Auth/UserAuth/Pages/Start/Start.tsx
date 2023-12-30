@@ -1,7 +1,7 @@
 import React from 'react'
 import './Start.css'
-import SplashScreenLogo from '../../../../UI/SplashScreenLogo/SplashScreenLogo'
-import logo from '../../../../Assets/images/logo-green.svg'
+import SplashScreenLogo from '../../../../../UI/SplashScreenLogo/SplashScreenLogo'
+import logo from '../../../../../Assets/images/logo-green.svg'
 import { Link } from 'react-router-dom'
 
 const Start:React.FC = () => {

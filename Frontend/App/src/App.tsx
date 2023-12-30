@@ -2,10 +2,12 @@ import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import WelcomePage from './Components/App/Introduction/WelcomePage/WelcomePage';
 import SplashScreen from './Components/App/Introduction/SplashScreen/SplashScreen';
-import Start from './Components/Auth/Pages/Start/Start';
-import Register from './Components/Auth/Pages/Register/Register';
-import Login from './Components/Auth/Pages/Login/Login';
+import Start from './Components/Auth/UserAuth/Pages/Start/Start';
+import Register from './Components/Auth/UserAuth/Pages/Register/Register';
+import Login from './Components/Auth/UserAuth/Pages/Login/Login';
 import TermsAndConditions from './Components/Auth/TermsAndConditions/TermsAndConditions';
+import ForgotPassword from './Components/Auth/UserAuth/Pages/ForgotPassword/ForgotPassword';
+import VerifyWithOtp from './Components/Auth/UserAuth/Pages/VerifyWithOtp/VerifyWithOtp';
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
         <Route path={"/register"} element={<Register/>}/>
         <Route path={"/policy"} element={<TermsAndConditions/>}/>
         <Route path={"/login"} element={<Login/>}/>
-        {/* <Route path={"/forgot"} element={<ForgotPassword/>}/> */}
+        <Route path={"/forgot"} element={<ForgotPassword/>}/>
+        <Route path={"/verify"} element={<VerifyWithOtp/>}/>
       </Routes>
     </div>
   );

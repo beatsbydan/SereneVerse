@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import './Register.css'
-import SplashScreenLogo from '../../../../UI/SplashScreenLogo/SplashScreenLogo'
+import SplashScreenLogo from '../../../../../UI/SplashScreenLogo/SplashScreenLogo'
 import { FaArrowLeft } from "react-icons/fa6";
-import Input from '../../../../UI/Input/AuthInput/Input'
-import CheckBox from '../../../../UI/CheckBox/CheckBox'
-import Button from '../../../../UI/Button/SplashButton/Button'
+import Input from '../../../../../UI/Input/AuthInput/Input'
+import CheckBox from '../../../../../UI/CheckBox/CheckBox'
+import Button from '../../../../../UI/Button/SplashButton/Button'
 import {Link, useNavigate} from 'react-router-dom'
-import ThirdPartyAuth from '../../ThirdPartyAuth/ThirdPartyAuth';
+import ThirdPartyAuth from '../../../ThirdPartyAuth/ThirdPartyAuth';
 
 const Register: React.FC = () => {
     type InputType = {
