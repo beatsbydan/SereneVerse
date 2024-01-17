@@ -1,5 +1,5 @@
 .animate{
-    animation: 1s forwards loadSplash
+    animation: 2s forwards loadSplash
 }
 
 @keyframes loadSplash {
