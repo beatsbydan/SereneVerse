@@ -1,15 +1,34 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom'
-import WelcomePage from './Components/App/Introduction/WelcomePage/WelcomePage';
-import SplashScreen from './Components/App/Introduction/SplashScreen/SplashScreen';
-import Start from './Components/Auth/UserAuth/Pages/Start/Start';
-import Register from './Components/Auth/UserAuth/Pages/Register/Register';
-import Login from './Components/Auth/UserAuth/Pages/Login/Login';
-import TermsAndConditions from './Components/Auth/TermsAndConditions/TermsAndConditions';
-import ForgotPassword from './Components/Auth/UserAuth/Pages/ForgotPassword/ForgotPassword';
-import VerifyWithOtp from './Components/Auth/UserAuth/Pages/VerifyWithOtp/VerifyWithOtp';
-import ResetPassword from './Components/Auth/UserAuth/Pages/ResetPassword/ResetPassword';
+import loadable from '@loadable/component'
 
+const WelcomePage = loadable(()=> import('./Components/App/Introduction/WelcomePage/WelcomePage'),{
+  fallback: <div>Hi</div>
+})
+const SplashScreen = loadable(()=> import('./Components/App/Introduction/SplashScreen/SplashScreen'),{
+  fallback: <div>Hi</div>
+})
+const Start = loadable(()=> import('./Components/Auth/UserAuth/Pages/Start/Start'),{
+  fallback: <div>Hi</div>
+})
+const Register = loadable(()=> import('./Components/Auth/UserAuth/Pages/Register/Register'),{
+  fallback: <div>Hi</div>
+})
+const Login = loadable(()=> import('./Components/Auth/UserAuth/Pages/Login/Login'),{
+  fallback: <div>Hi</div>
+})
+const TermsAndConditions = loadable(()=> import('./Components/Auth/TermsAndConditions/TermsAndConditions'),{
+  fallback: <div>Hi</div>
+})
+const ForgotPassword = loadable(()=> import('./Components/Auth/UserAuth/Pages/ForgotPassword/ForgotPassword'),{
+  fallback: <div>Hi</div>
+})
+const VerifyWithOtp = loadable(()=> import('./Components/Auth/UserAuth/Pages/VerifyWithOtp/VerifyWithOtp'),{
+  fallback: <div>Hi</div>
+})
+const ResetPassword = loadable(()=> import('./Components/Auth/UserAuth/Pages/ResetPassword/ResetPassword'),{
+  fallback: <div>Hi</div>
+})
 function App() {
   return (
     <div className="App">
