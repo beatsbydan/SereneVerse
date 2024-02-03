@@ -89,7 +89,7 @@ const login = AsyncHandler(async (req, res, next) => {
     return res.status(status.CREATED).json({
       status: "success",
       statusCode: status.CREATED,
-      token : accessToken,
+      token: accessToken,
       data: user,
     });
   } catch (error) {
@@ -123,12 +123,27 @@ const confirmOtp = AsyncHandler(async (req, res, next) => {
 
 const logOut = AsyncHandler(async (req, res, next) => {
   try {
-
+    const { refreshToken } = req.cookies;
+    const userId = req.userId;
+    const user = await User.findById(userId);
+    if (!user || !refreshToken || user.refreshToken != refreshToken) {
+      res.clearCookie("refresh_token", {
+        httpOnly: true,
+        secure: true,
+      });
+      throw new ForbiddenRequestError(
+        "Invalid User Signed Out - no refresh token - invalid refresh token - user not found"
+      );
+    }
+    res.clearCookie("refresh_token", {
+      httpOnly: true,
+      secure: true,
+    });
+    return res.sendStatus(status.NO_CONTENT);
   } catch (error) {
     next(error);
   }
 });
-
 
 module.exports = {
   register,
@@ -136,5 +151,5 @@ module.exports = {
   forgotPassword,
   resetPassword,
   confirmOtp,
-  logOut
+  logOut,
 };

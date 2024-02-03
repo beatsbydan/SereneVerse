@@ -8,9 +8,12 @@ const {
   logOut,
 } = require("../controllers/auth.controller");
 const validator = require("../middlewares/validator.middleware");
-const { loginSchema } = require("../validators/login.validator");
-const { createUserSchema } = require("../validators/signup.validator");
-const authMiddleware = require("../middlewares/auth.middleware")
+const { loginSchema } = require("../validators/login.schema");
+const { createUserSchema } = require("../validators/signup.schema");
+const { checkEmailSchema } = require("../validators/checkForEmail.schema");
+const { checkPassSchema } = require("../validators/checkForPass.schema");
+const { otpSchema } = require("../validators/otp.schema");
+const authMiddleware = require("../middlewares/auth.middleware");
 
 const authRouter = Router();
 
@@ -18,13 +21,12 @@ authRouter.route("/register").post(validator(createUserSchema), register);
 
 authRouter.route("/login").post(validator(loginSchema), login);
 
-authRouter.route("/forgot").post(forgotPassword);
+authRouter.route("/forgot").post(validator(checkEmailSchema), forgotPassword);
 
-authRouter.route("/reset").patch(resetPassword);
+authRouter.route("/reset").patch(validator(checkPassSchema), resetPassword);
 
-authRouter.route("/confirm").post(confirmOtp);
+authRouter.route("/confirm").post(validator(otpSchema), confirmOtp);
 
 authRouter.route("/sign-out").post(authMiddleware, logOut);
-
 
 module.exports = authRouter;
