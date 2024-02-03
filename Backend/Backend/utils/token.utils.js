@@ -1,12 +1,12 @@
 const { secret } = require("../config/constants.config");
-const { sign, verify } = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
-const signToken = async (id) => {
+const signToken = (id) => {
   try {
     let payload = {
       id,
     };
-    let token = await sign(payload, secret, {
+    let token = jwt.sign(payload, secret, {
       expiresIn: "30m",
     });
     return token;
@@ -15,21 +15,21 @@ const signToken = async (id) => {
   }
 };
 
-const verifyToken = async (token) => {
+const verifyToken =  (token) => {
   try {
-    let payload = await verify(token, secret);
+    let payload = jwt.verify(token, secret);
     return payload.id;
   } catch (error) {
     throw new Error(error);
   }
 };
 
-const signRefreshToken = async (id) => {
+const signRefreshToken =  (id) => {
   try {
     let payload = {
       id,
     };
-    let token = await sign(payload, secret, {
+    let token = jwt.sign(payload, secret, {
       expiresIn: "7d",
     });
     return token;
