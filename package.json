@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "http-status": "^1.7.3"
+  }
+}

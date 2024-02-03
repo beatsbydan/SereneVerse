@@ -3,8 +3,8 @@ const { genSalt, hash, compare } = require("bcrypt");
 const hashPassword = async (p) => {
   try {
     let salt = await genSalt();
-    let myhash = await hash(p, salt);
-    return myhash;
+    let myHash = await hash(p, salt);
+    return myHash;
   } catch (error) {
     throw new Error(error);
   }

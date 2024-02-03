@@ -2,7 +2,7 @@ const { JsonWebTokenError } = require("jsonwebtoken");
 
 const errHandler = (error, req, res, next) => {
   const statuscode = res.statusCode == 200 ? 500 : res.statusCode;
-  let message = "A server error occured";
+  let message = "A server error occurred";
   let type = "Unknown server Error";
   if (error instanceof Error) {
     message = error.message;
