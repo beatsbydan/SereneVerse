@@ -86,9 +86,9 @@ const login = AsyncHandler(async (req, res, next) => {
       password,
       _v: undefined,
     };
-    return res.status(status.CREATED).json({
+    return res.status(status.OK).json({
       status: "success",
-      statusCode: status.CREATED,
+      statusCode: status.OK,
       token: accessToken,
       data: user,
     });
