@@ -5,15 +5,19 @@ const UnauthorizedRequestError = require("../exceptions/badRequest.exception");
 const { hashPassword, comparePassword } = require("../utils/hashing.utils");
 const { User } = require("../models/user.model");
 
+// controller to retrieve all users(admin)
 const getAllUsers = AsyncHandler(async (req, res, next) => {
   try {
+    // fetches all users in the db
     const users = await User.find({});
 
+    // removes sensitive/unnecessary fields from each user
     const sanitizedUsers = users.map((user) => {
       user.hash = undefined;
       user._v = undefined;
       user.refreshToken = undefined;
     });
+
     return res.status(status.OK).json({
       status: "success",
       statusCode: status.OK,
@@ -24,14 +28,17 @@ const getAllUsers = AsyncHandler(async (req, res, next) => {
   }
 });
 
+// controller to update user password
 const updatePassword = AsyncHandler(async (req, res, next) => {
   try {
     const id = req.userId;
+    // destructure values from request body
     const { newPass, currPass } = req.body;
 
     const user = await User.findById(id);
     if (!user) throw new ForbiddenRequestError("User not found");
 
+    // validate old password and set new password
     const validate = await comparePassword(user.hash, currPass);
     if (!validate) throw new UnauthorizedRequestError("Password mismatch");
 

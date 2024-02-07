@@ -5,6 +5,7 @@ const {
   forgotPassword,
   resetPassword,
   confirmOtp,
+  refresh,
   logOut,
 } = require("../controllers/auth.controller");
 const validator = require("../middlewares/validator.middleware");
@@ -23,10 +24,12 @@ authRouter.route("/login").post(validator(loginSchema), login);
 
 authRouter.route("/forgot").post(validator(checkEmailSchema), forgotPassword);
 
+authRouter.route("/refresh").get(authMiddleware, refresh);
+
 authRouter.route("/reset").patch(validator(checkPassSchema), resetPassword);
 
 authRouter.route("/confirm").post(validator(otpSchema), confirmOtp);
 
-authRouter.route("/sign-out").post(authMiddleware, logOut);
+authRouter.route("/sign-out").get(authMiddleware, logOut);
 
 module.exports = authRouter;

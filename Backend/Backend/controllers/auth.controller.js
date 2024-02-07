@@ -121,24 +121,63 @@ const confirmOtp = AsyncHandler(async (req, res, next) => {
   }
 });
 
+// controller to refresh the logged in user and renew access token
+const refresh = AsyncHandler(async (req, res, next) => {
+  try {
+    // destructure existing refresh token from the cookies sent to the browser in the log in endpoint
+    const { refreshToken } = req.cookies;
+
+    //fetch userId attached to request object from authMiddleware
+    const userId = req.userId;
+
+    const user = await User.findById(userId);
+
+    if (!user || user.refreshToken != refreshToken)
+      throw new ForbiddenRequestError("User not Found - invalid refresh token");
+    // after validating logged in user, pass a new access token
+    const accessToken = signToken(user._id);
+
+    return res.status(status.OK).json({
+      status: "success",
+      statusCode: status.OK,
+      token: accessToken,
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+// controller to log out a user session
 const logOut = AsyncHandler(async (req, res, next) => {
   try {
     const { refreshToken } = req.cookies;
+
     const userId = req.userId;
+
     const user = await User.findById(userId);
+
     if (!user || !refreshToken || user.refreshToken != refreshToken) {
+      // clears cookie from user browser and logs user out
       res.clearCookie("refresh_token", {
         httpOnly: true,
         secure: true,
       });
+
+      user.refreshToken = undefined;
+      await user.save();
       throw new ForbiddenRequestError(
         "Invalid User Signed Out - no refresh token - invalid refresh token - user not found"
       );
     }
+
     res.clearCookie("refresh_token", {
       httpOnly: true,
       secure: true,
     });
+
+    user.refreshToken = undefined;
+    await user.save();
+
     return res.sendStatus(status.NO_CONTENT);
   } catch (error) {
     next(error);
@@ -152,4 +191,5 @@ module.exports = {
   resetPassword,
   confirmOtp,
   logOut,
+  refresh,
 };
