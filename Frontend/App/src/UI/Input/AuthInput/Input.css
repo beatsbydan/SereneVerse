@@ -1,0 +1,30 @@
+.authInputElement{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-start;
+}
+.authInputElement label{
+    width: 100%;
+    font-size:0.85rem;
+    color:rgba(98, 97, 97, 1) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.authInputElement label small{
+    font-size: inherit;
+}
+.authInputElement input{
+    width: 100%;
+    padding: 1rem;
+    font-family: inherit;
+    border: 0.1rem solid rgba(176, 176, 176, 1);
+    border-radius: 0.7rem;
+}
+.authInputElement input::placeholder, input[type = "date"]{
+    color: rgba(194, 181, 181, 1);
+}
+

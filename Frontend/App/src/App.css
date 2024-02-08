@@ -1,0 +1,94 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  /* COLORS */
+
+  --root-color: rgba(26, 153, 142, 1);
+  --ff-montserrat: 'Montserrat', sans-serif;
+  --ff-poppins: 'Poppins', sans-serif;
+  --ff-inter: 'Inter', sans-serif;
+
+  /* FONT-SIZES */
+  --ff-p: 0.85rem;
+  --ff-small: 0.7rem;
+}
+
+.splashCard{
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--root-color);
+  position: relative;
+  padding: 2em 5%;
+  font-family: var(--ff-montserrat);
+}
+
+.authSplash{
+  width:90%;
+  max-width:950px;
+  background-color: white;
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.164);
+  border-radius: 0.7rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90vh;
+  max-height: 800px;
+}
+
+.error{
+  color: red;
+}
+.errorField{
+  border-color: red;
+}
+
+.prevPage{
+  position: absolute;
+  top: 50px;
+  left: 5%;
+  cursor: pointer;
+  color: var(--root-color);
+}
+
+input{
+  border: none;
+}
+input:focus{
+  outline: none;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+button{
+  border: none;
+  cursor:pointer;
+}
+
+@media screen and (max-width:700px) {
+  .splashCard{
+    background-color: white;
+  }
+  .authSplash{
+    box-shadow: none;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    max-height: unset;
+    width: 100%;
+  }
+  .prevPage{
+    color: white;
+  }
+}
+

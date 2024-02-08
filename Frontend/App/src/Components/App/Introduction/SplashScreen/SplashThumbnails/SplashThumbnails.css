@@ -1,0 +1,22 @@
+.splashThumbNails{
+    width: 100%;
+    max-width: 70px;
+    display: flex;
+    margin:2rem auto 1.4rem auto;
+    align-items: center;
+    justify-content: space-between;
+    gap:0.3rem;
+}
+.splashThumbNail{
+    width: 15px;
+    height: 5px;
+    border-radius: 0.3rem;
+    background-color: rgba(197, 248, 243, 1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.splashThumbNail.currentThumbNail{
+    width: 25px;
+    background-color: rgba(26, 153, 142, 1);
+    transition: all 0.3s ease;
+}
