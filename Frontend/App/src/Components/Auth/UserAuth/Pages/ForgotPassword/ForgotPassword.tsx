@@ -29,12 +29,12 @@ const ForgotPassword:React.FC = () => {
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const {id, value} = e.target
+        const {name, value} = e.target
 
         console.log(e.target)
         setInputValues( prev => {
             return (
-                {...prev, [id]: value}
+                {...prev, [name]: value}
             )
         })
     }
@@ -53,7 +53,7 @@ const ForgotPassword:React.FC = () => {
                     </div>
                     <div className="forgot--main">
                         <Input
-                            id={'loginEmail'}
+                            name={'email'}
                             type={'text'}
                             label={'Email'}
                             error={inputErrors.email}
