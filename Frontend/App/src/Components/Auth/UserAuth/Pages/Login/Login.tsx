@@ -34,12 +34,12 @@ const Login: React.FC = () => {
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const {id, value} = e.target
+        const {name, value} = e.target
 
         console.log(e.target)
         setInputValues( prev => {
             return (
-                {...prev, [id]: value}
+                {...prev, [name]: value}
             )
         })
     }
@@ -58,7 +58,7 @@ const Login: React.FC = () => {
                     </div>
                     <div className="login--main">
                         <Input
-                            id={'loginEmail'}
+                            name={'email'}
                             type={'text'}
                             label={'Email'}
                             error={inputErrors.email}
@@ -67,7 +67,7 @@ const Login: React.FC = () => {
                             onChange={handleChange}
                         />
                         <Input
-                            id={'loginPassword'}
+                            name={'password'}
                             type={'password'}
                             label={'Password'}
                             error={inputErrors.password}

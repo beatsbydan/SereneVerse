@@ -33,12 +33,12 @@ const ResetPassword:React.FC = () => {
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const {id, value} = e.target
+        const {name, value} = e.target
 
-        console.log(e.target)
+        console.log(e.target.value)
         setInputValues( prev => {
             return (
-                {...prev, [id]: value}
+                {...prev, [name]: value}
             )
         })
     }
@@ -51,13 +51,13 @@ const ResetPassword:React.FC = () => {
             <div className='authSplash'>
                 <FaArrowLeft className="prevPage" size={20} onClick={handlePageChange} />
                 <form onSubmit={handleSubmit} className='reset'>
-                    <div className="login--head">
+                    <div className="reset--head">
                         <h1>Welcome Back!</h1>
                         <p>Sign in to <span>MoodMentor</span></p>
                     </div>
                     <div className="reset--main">
                         <Input
-                            id={'newPassword'}
+                            name={'newPassword'}
                             type={'password'}
                             label={'New Password'}
                             error={inputErrors.newPassword}
@@ -66,7 +66,7 @@ const ResetPassword:React.FC = () => {
                             onChange={handleChange}
                         />
                         <Input
-                            id={'confirmPassword'}
+                            name={'confirmPassword'}
                             type={'password'}
                             label={'Confirm Password'}
                             error={inputErrors.confirmPassword}

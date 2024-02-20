@@ -47,13 +47,9 @@ const Register: React.FC = () => {
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const {id, value} = e.target
-        console.log(e.target)
-        setInputValues( prev => {
-            return(
-                {...prev, [id]: value}
-            )
-        })
+        const {name, value} = e.target
+
+        setInputValues({...inputValues, [name]: value})
     }
     const handlePageChange = () => {
         navigate(-1)
@@ -70,7 +66,7 @@ const Register: React.FC = () => {
                     </div>
                     <div className="register--main">
                         <Input
-                            id={'regName'}
+                            name={'name'}
                             type={'text'}
                             label={'Full name'}
                             error={inputErrors.name}
@@ -79,7 +75,7 @@ const Register: React.FC = () => {
                             onChange={handleChange}
                         />
                         <Input
-                            id={'regEmail'}
+                            name={'email'}
                             type={'text'}
                             label={'Email'}
                             error={inputErrors.email}
@@ -88,7 +84,7 @@ const Register: React.FC = () => {
                             onChange={handleChange}
                         />
                         <Input
-                            id={'regPassword'}
+                            name={'password'}
                             type={'password'}
                             label={'Password'}
                             error={inputErrors.password}
@@ -97,7 +93,7 @@ const Register: React.FC = () => {
                             onChange={handleChange}
                         />
                         <Input
-                            id={'regPhone'}
+                            name={'phoneNumber'}
                             type={'text'}
                             label={'Phone number'}
                             error={inputErrors.phoneNumber}
@@ -106,7 +102,7 @@ const Register: React.FC = () => {
                             onChange={handleChange}
                         />
                         <Input
-                            id={'regDateOfBirth'}
+                            name={'dateOfBirth'}
                             type={'date'}
                             label={'Date of Birth'}
                             error={inputErrors.dateOfBirth}
