@@ -1,0 +1,20 @@
+.navbarLogo{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: white;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    max-width: 200px;
+    background-color: var(--root-color);
+    border-radius: 2rem;
+    justify-content: center;
+    font-family: var(--ff-montserrat);
+}
+.navbarLogo h3{
+    font-weight: 700;
+    font-size: 1rem;
+}
+.navbarLogo img{
+    width: 25px;
+}

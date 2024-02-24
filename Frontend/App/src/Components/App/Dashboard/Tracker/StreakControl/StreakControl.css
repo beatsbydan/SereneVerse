@@ -1,0 +1,36 @@
+.streakControl{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    gap: 3%;
+    justify-content: space-between;
+    padding:2rem 2rem 3rem 2rem ;
+}
+.streakSetting, .streakSettingDesc{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4rem;
+    text-align: center;
+}
+.streakSettingDesc{
+    background-color: rgba(217, 217, 217, 1);
+    border: 0.2rem solid rgba(9, 54, 50, 1);
+    border-radius: 0.6rem;
+    gap: 0.8rem;
+}
+.streakSetting h4{
+    font-weight:  800;
+}
+.streakSetting button{
+    max-width: 180px;
+    margin-top: 2rem;
+    background-color: rgba(9, 54, 50, 1);
+}
+@media(hover: hover){
+    .streakSetting button:hover{
+        color:rgba(9, 54, 50, 1);
+    }
+}

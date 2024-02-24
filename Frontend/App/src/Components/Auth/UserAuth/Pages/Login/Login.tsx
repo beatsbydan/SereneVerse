@@ -54,7 +54,7 @@ const Login: React.FC = () => {
                 <form onSubmit={handleSubmit} className='login'>
                     <div className="login--head">
                         <h1>Welcome Back!</h1>
-                        <p>Sign in to <span>MoodMentor</span></p>
+                        <p>Sign in to <span>SereneVerse</span></p>
                     </div>
                     <div className="login--main">
                         <Input

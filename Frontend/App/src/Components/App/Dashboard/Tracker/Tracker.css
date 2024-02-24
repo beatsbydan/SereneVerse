@@ -1,0 +1,19 @@
+.tracker{
+    width: 100%;
+    padding: 6rem 5%;
+    font-family: var(--ff-montserrat);
+}
+.bar{
+    width: 150px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgba(9, 54, 50, 1);
+    margin: 3rem auto;
+}
+.motivationQuote{
+    text-align: center;
+    font-weight: 600;
+    color: rgba(60, 60, 60, 1);
+    max-width: 800px;
+    margin: auto;
+}

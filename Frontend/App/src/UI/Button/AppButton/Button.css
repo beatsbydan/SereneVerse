@@ -1,7 +1,7 @@
-.splashButton{
+.appButton{
     width:100%;
     border-radius: 0.5rem;
-    background-color: var(--root-color);
+    background-color: rgba(0, 103, 94, 1);
     color:white;
     font-family: var(--ff-montserrat);
     padding: 1rem;
@@ -11,8 +11,8 @@
     transition: all 0.3s ease;
 }
 @media (hover: hover){
-    .splashButton:hover{
-        color:var(--root-color);
+    .appButton:hover{
+        color:rgba(0, 103, 94, 1);
         background-color: white;
     }
 }
