@@ -12,7 +12,7 @@ const Start:React.FC = () => {
                 <div className="authStart">
                     <div className='authStart--head'>
                         <img src={logo} alt="logo" />
-                        <h2>MoodMentor</h2>
+                        <h2>SereneVerse</h2>
                     </div>
                     <div className='authStart--main'>
                         <h2>Let’s get started!</h2>

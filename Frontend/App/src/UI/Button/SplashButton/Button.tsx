@@ -13,7 +13,7 @@ const fallBackFunction = () => {
 
 const Button: React.FC<ButtonType> = (props) => {
     return (
-        <button type={props.type} onClick={props.type === "button" ? props.actionHandler : fallBackFunction} className='customButton'>
+        <button type={props.type} onClick={props.type === "button" ? props.actionHandler : fallBackFunction} className='splashButton'>
             {props.text}
         </button>
     )

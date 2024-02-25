@@ -14,10 +14,10 @@ const WelcomePage: React.FC = () => {
     <div className="welcome">
       <div className="welcomePage">
         <img src={logo} alt="logo" />
-        <h1>MoodMentor</h1>
+        <h1>SereneVerse</h1>
         <p>
-          Welcome to MoodMentor, your safe space for healing and 
-          personal growth
+          Welcome to SereneVerse, your safe space for healing and 
+          personal growth.
         </p>
       </div>
     </div>

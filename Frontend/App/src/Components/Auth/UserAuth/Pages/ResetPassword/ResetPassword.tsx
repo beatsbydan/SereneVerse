@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link, useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import './ResetPassword.css'
 import SplashScreenLogo from '../../../../../UI/SplashScreenLogo/SplashScreenLogo'
 import { FaArrowLeft } from 'react-icons/fa6'
@@ -74,10 +74,6 @@ const ResetPassword:React.FC = () => {
                             placeholder={'Confirm Password'}
                             onChange={handleChange}
                         />
-                    </div>
-                    <div className='reset--options'>
-                        {/* <CheckBox text={"Remember me"}/> */}
-                        <Link to={"/forgot"}>Forgotten password? Reset</Link>
                     </div>
                     <div className="reset--actions">
                         <Button type={"submit"} text={'Reset'} actionHandler={handleSubmit}/>

@@ -22,7 +22,7 @@ const VerifyWithOtp:React.FC = () => {
             <SplashScreenLogo/>
             <div className='authSplash'>
                 <FaArrowLeft className="prevPage" size={20} onClick={handlePageChange} />
-                <form className='login'>
+                <form className='otp'>
                     <div className="otp--head">
                         <h1>OTP</h1>
                         <p>Please enter the <span>OTP</span> sent to your email.</p>

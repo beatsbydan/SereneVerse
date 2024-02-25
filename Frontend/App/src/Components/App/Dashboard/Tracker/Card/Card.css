@@ -1,0 +1,26 @@
+.streakCard{
+    width: 100%;
+    border-radius: 0.6rem;
+    margin-bottom: 3rem;
+}
+.steakCard--header{
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(9, 54, 50, 1);
+    border-radius: 0.6rem 0.6rem 0 0;
+}
+.streakCard--title{
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    background-color: white;
+    width:-moz-fit-content;
+    width: fit-content;
+}
+.streakCard--title h4{
+    color: rgba(9, 54, 50, 1);
+}
+.streakCard--body{
+    width: 100%;
+    background-color: rgba(243, 245, 245, 1);
+    border-radius:0 0 0.6rem 0.6rem;
+}

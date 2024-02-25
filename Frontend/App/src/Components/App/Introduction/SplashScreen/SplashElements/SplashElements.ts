@@ -11,18 +11,18 @@ type splashType = {
 const SplashElements: splashType[] = [
     {
         url: SplashOne,
-        header: 'Welcome to MoodMentor',
+        header: 'Welcome to SereneVerse',
         splashText: 'Find calm within, one session at a time. We\'re here to support you on your journey to emotional wellness. Together, we can make a difference.'
     },
     {
         url: SplashTwo,
-        header: 'Welcome to MoodMentor',
-        splashText: 'Experience a journey of self-discovery and healing with MoodMentor. Begin your transformation today.'
+        header: 'Welcome to SereneVerse',
+        splashText: 'Experience a journey of self-discovery and healing with SereneVerse. Begin your transformation today.'
     },
     {
         url: SplashThree,
-        header: 'Welcome to MoodMentor',
-        splashText: 'Take a moment to breathe, reflect, and find solace. MoodMentor is your companion on this journey towards better mental health.'
+        header: 'Welcome to SereneVerse',
+        splashText: 'Take a moment to breathe, reflect, and find solace. SereneVerse is your companion on this journey towards better mental health.'
     }
 ]
 

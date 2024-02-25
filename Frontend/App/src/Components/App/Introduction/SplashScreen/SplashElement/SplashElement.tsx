@@ -17,7 +17,7 @@ const SplashElement:React.FC<SplashElementType> = (props) => {
     return (
         <div className='splashElement'>
             <div className="splashBlock">
-                <LazyImage src={props.splash.url} alt="splashImg" />
+                <img src={props.splash.url} alt="splashImg" />
                 <h4>{props.splash.header}</h4>
                 <p>{props.splash.splashText}</p>
             </div>

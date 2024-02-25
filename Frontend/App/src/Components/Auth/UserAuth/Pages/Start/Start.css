@@ -33,6 +33,7 @@
     font-size: 1rem;
     font-weight: 700;
     transition: all 0.3s ease;
+    font-family: var(--ff-poppins);
 }
 .authStart--actions a:first-child{
     background-color: var(--root-color);

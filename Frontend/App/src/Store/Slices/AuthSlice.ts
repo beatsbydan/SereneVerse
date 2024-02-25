@@ -2,6 +2,36 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
+    register: {
+        status: "idle",
+        response: null,
+        error: null
+    },
+    login: {
+        status: "idle",
+        response: null,
+        error: null
+    },
+    findEmail: {
+        status: "idle",
+        response: null,
+        error: null
+    },
+    otp: {
+        status: "idle",
+        response: null,
+        error: null
+    },
+    reset: {
+        status: "idle",
+        response: null,
+        error: null
+    },
+    logOut:{
+        status: "idle",
+        response: null,
+        error: null
+    },
     isLoggedIn: false,
     accessToken: null,
     prevLocation: null,
@@ -125,6 +155,21 @@ export const resetPassword = createAsyncThunk('Slices/resetPassword', async(form
     }
     catch(err: any){
         return err.message
+    }
+})
+
+export const logOut = createAsyncThunk('Slices/logout', async() => {
+    try{
+        const response = axios.get('', {
+            headers:{
+                "Content-Type": "application/json",
+            },
+            withCredentials: true
+        })
+        return (await response).data
+    }
+    catch(error: any){
+        return error.message
     }
 })
 
