@@ -1,6 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+// APIs
+const regApi = `${process.env.REACT_APP_LOCAL_URL}/auth/register`
+const logInApi = `${process.env.REACT_APP_LOCAL_URL}/auth/login`
+const logOutApi = `${process.env.REACT_APP_LOCAL_URL}/auth/sign-out`
+
 const initialState = {
     register: {
         status: "idle",
@@ -38,24 +43,6 @@ const initialState = {
     user: null
 }
 
-type regDataType = {
-    fullName: string,
-    email: string,
-    password: string,
-    phoneNumber: string,
-    dateOfBirth: string
-}
-
-type loginDataType = {
-    email: string,
-    password: string
-}
-
-type resetPasswordType ={
-    newPassword: string,
-    confirmNewPassword: string
-}
-
 const AuthSlice = createSlice({
     name: 'auth',
     initialState: initialState,
@@ -81,35 +68,35 @@ const AuthSlice = createSlice({
     }
 })
 
-export const register = createAsyncThunk('slices/register', async(formData: regDataType) => {
+export const register = createAsyncThunk('slices/register', async(formData) => {
     try{
-        const response = await axios.post('', {...formData}, {
+        const response = await axios.post(regApi, {...formData}, {
             headers: {
                 "Content-Type": "application/json"
             }
         })
         return response.data
     }
-    catch(err: any){
+    catch(err){
         return err.message
     }
 })
 
-export const login = createAsyncThunk('Slices/login', async(formData: loginDataType) => {
+export const login = createAsyncThunk('Slices/login', async(formData) => {
     try{
-        const response = await axios.post('', {...formData}, {
+        const response = await axios.post(logInApi, {...formData}, {
             headers: {
                 "Content-Type": "application/json"
             }
         })
         return response.data
     }
-    catch(err: any){
+    catch(err){
         return err.message
     }
 })
 
-export const findEmail = createAsyncThunk('Slices/findEmail', async(email: string) => {
+export const findEmail = createAsyncThunk('Slices/findEmail', async(email) => {
     const data = {
         email: email
     }
@@ -121,12 +108,12 @@ export const findEmail = createAsyncThunk('Slices/findEmail', async(email: strin
         })
         return response.data
     }
-    catch(err: any){
+    catch(err){
         return err.message
     }
 })
 
-export const verifyOtp = createAsyncThunk('Slices/VerifyOtp', async(otp: string) => {
+export const verifyOtp = createAsyncThunk('Slices/VerifyOtp', async(otp) => {
     const data = {
         otp: otp
     }
@@ -138,12 +125,12 @@ export const verifyOtp = createAsyncThunk('Slices/VerifyOtp', async(otp: string)
         })
         return response.data
     }
-    catch(err: any){
+    catch(err){
         return err.message
     }
 })
 
-export const resetPassword = createAsyncThunk('Slices/resetPassword', async(formData: resetPasswordType) => {
+export const resetPassword = createAsyncThunk('Slices/resetPassword', async(formData) => {
     
     try{
         const response = await axios.post('', {...formData}, {
@@ -153,27 +140,29 @@ export const resetPassword = createAsyncThunk('Slices/resetPassword', async(form
         })
         return response.data
     }
-    catch(err: any){
+    catch(err){
         return err.message
     }
 })
 
-export const logOut = createAsyncThunk('Slices/logout', async() => {
+export const logOut = createAsyncThunk('Slices/logout', async(_, {getState}) => {
+    const token = selectAccessToken(getState())
     try{
-        const response = axios.get('', {
+        const response = axios.get(logOutApi, {
             headers:{
                 "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             },
             withCredentials: true
         })
         return (await response).data
     }
-    catch(error: any){
+    catch(error){
         return error.message
     }
 })
 
 export const {setCredentials, setIsLoggedIn, setPrevLocation} = AuthSlice.actions
-// export const selectToken = (state) => state.auth.accessToken
+export const selectAccessToken = (state) => state.auth.accessToken
 
 export default AuthSlice.reducer

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProtectedRoutes = () => {
+const ProtectedRoutes:React.FC = () => {
   return (
     <div>ProtectedRoutes</div>
   )

@@ -6,7 +6,7 @@ type HookReturnType = {
 
 const useRefreshToken = (): HookReturnType => {
     const refresh = async() => {
-        axios.get('',{
+        axios.get(`${process.env.REACT_APP_LOCAL_URL}/auth/refresh`,{
             withCredentials: true
         })
         .then(response => {
