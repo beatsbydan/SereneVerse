@@ -1,9 +1,25 @@
 import React from 'react'
+import Modal from '../Modal'
+import './CommentModal.css'
 
-const CommentModal = () => {
+const CommentUI:React.FC = () =>{
     return (
-        <div>CommentModal</div>
+        <div className="commentUI">
+
+        </div>
     )
 }
 
-export default CommentModal
+const Comment:React.FC<
+    {
+    isOpen: boolean, 
+    closeModal: ()=> void
+    }> = (props) => {
+    return(
+        <Modal isOpen={props.isOpen} closeModal={props.closeModal}>
+            <CommentUI/>
+        </Modal>
+    )
+}
+
+export default Comment
