@@ -8,7 +8,7 @@ import './StreakControl.css'
 import StreakStart from '../../../../../UI/Modals/StreakModal/StreakModal'
 
 const StreakControl:React.FC = () => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const changeIsOpen = () =>{
         setIsOpen(!isOpen)
     }
@@ -55,7 +55,7 @@ const StreakControl:React.FC = () => {
                     })
                 }
             </ul>
-            {<StreakStart
+            {isOpen && <StreakStart
                 isOpen={isOpen}
                 closeModal={changeIsOpen}
             />}
