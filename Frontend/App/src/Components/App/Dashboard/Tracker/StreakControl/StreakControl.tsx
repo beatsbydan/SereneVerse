@@ -55,10 +55,12 @@ const StreakControl:React.FC = () => {
                     })
                 }
             </ul>
-            {isOpen && <StreakStart
-                isOpen={isOpen}
-                closeModal={changeIsOpen}
-            />}
+            {
+                isOpen && <StreakStart
+                    isOpen={isOpen}
+                    closeModal={changeIsOpen}
+                />
+            }
         </>
     )
 }
